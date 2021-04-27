@@ -34,7 +34,7 @@ jobs:
       run: |
         cd Application
         chmod +x gradlew
-        ./gradle build test bootwar
+        ./gradlew build test bootwar
 
     - name: Creating artifact directories
       run: |
