@@ -34,7 +34,7 @@ jobs:
       run: |
         cd Application
         chmod +x gradlew
-        gradle build test bootwar
+        ./gradle build test bootwar
 
     - name: Creating artifact directories
       run: |
@@ -137,7 +137,7 @@ jobs:
       run: |
         cd Tests
         chmod +x gradlew
-        gradle fatjar
+        ./gradlew fatjar
 
     # Run functional tests
     - name: set up test environment and run tests
