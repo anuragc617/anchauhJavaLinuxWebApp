@@ -33,4 +33,4 @@ jobs:
          id: cache
          with:
            path: .
-           key: cache-key-11
+           key: cache-key-${{github.run_number}}
