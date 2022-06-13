@@ -33,4 +33,4 @@ jobs:
          id: cache
          with:
            path: .
-           key: macOSbuildmacOSbuildmacOSbuildmacOSbuildmacOSbuildmacOSbuildmacOSbuildmacOSbuild
+           key: cache-key-${{github.run_number}}
