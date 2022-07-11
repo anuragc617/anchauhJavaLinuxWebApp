@@ -32,5 +32,5 @@ jobs:
          uses: actions/cache@v3
          id: cache
          with:
-           path: ~/
+           path: .
            key: cache+key-${{github.run_number}}
