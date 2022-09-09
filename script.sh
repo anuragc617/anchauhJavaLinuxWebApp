@@ -1,3 +1,4 @@
 echo "From script"
-echo `${{ HMAC  }}`
+echo $hmac
+echo ${{ HMAC }}
 
