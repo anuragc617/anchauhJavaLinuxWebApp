@@ -1,4 +1,3 @@
 echo "From script"
-echo $hmac
-echo ${{ HMAC }}
+echo $hmac >> test_secret.txt
 
