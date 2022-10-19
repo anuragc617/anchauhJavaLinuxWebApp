@@ -37,3 +37,6 @@ jobs:
          with:
            path: .
            key: ${{ runner.os }}-buildx-${{ github.sha }}
+           
+       - name: Script
+         run: ls 
