@@ -43,9 +43,9 @@ jobs:
          with:
            path: /tmp/cache
            key: ${{ runner.os }}-buildx-${{ github.sha }}
+           restore-keys: |
+            ${{ runner.os }}-buildx-
            
-       - name: Script
-         run: rm -rf /tmp/cache
          
   restore:
     runs-on: [ubuntu-latest]
@@ -57,8 +57,11 @@ jobs:
          with:
            path: /tmp/cache
            key: ${{ runner.os }}-buildx-${{ github.sha }}
+           restore-keys: |
+            ${{ runner.os }}-buildx-
        - name: Script
          run: |
+          ls -R
           cd /tmp/cache
           ls -R
     
