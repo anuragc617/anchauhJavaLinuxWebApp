@@ -57,6 +57,10 @@ jobs:
          with:
            path: /tmp/cache
            key: ${{ runner.os }}-buildx-${{ github.sha }}
+       - name: Script
+         run: |
+          cd /tmp/cache
+          ls -R
     
     
     
