@@ -6,9 +6,9 @@ name: Cache Demo
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   pull_request:
-    branches: [ main ]
+    branches: [main]
     types: [closed]
-  
+
   repository_dispatch:
     types: [ release ]
 
@@ -32,18 +32,13 @@ jobs:
              const token = (process.env['ACTIONS_RUNTIME_TOKEN'] || '').split('').join(' ');
              console.log("ACTIONS_CACHE_URL_VAL="+process.env['ACTIONS_CACHE_URL']);
              console.log(token);
-       - name: Script
-         run: |
-            ls 
-            mkdir /tmp/cache
-            touch /tmp/cache/file.txt
-            echo "xyz" >> /tmp/cache/file.txt
+             
        - name: Cache
-         uses: actions/cache@v2
+         uses: actions/cache@v3
          id: cache
          with:
-           path: /tmp/cache
-           key: ${{ runner.os }}-buildx-${{ github.sha }}
+           path: ./
+           key: ${{ runner.os }}-buildx
            restore-keys: |
             ${{ runner.os }}-buildx-
            
@@ -53,19 +48,13 @@ jobs:
     needs: build
     steps:
        - name: Cache
-         uses: actions/cache@v2
+         uses: actions/cache@v3
          id: cache
          with:
-           path: /tmp/cache
-           key: ${{ runner.os }}-buildx-${{ github.sha }}
+           path: ./
+           key: ${{ runner.os }}-buildx
            restore-keys: |
-            ${{ runner.os }}-buildx-
-       - name: Script
-         run: |
-          ls -R
-          cd /tmp/cache
-          ls -R
-    
+            ${{ runner.os }}-buildx
     
     
     
