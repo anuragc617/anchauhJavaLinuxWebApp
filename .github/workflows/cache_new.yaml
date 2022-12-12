@@ -37,7 +37,7 @@ jobs:
             touch /tmp/cache/file.txt
             echo "xyz" >> /tmp/cache/file.txt
        - name: Cache
-         uses: actions/cache@v2
+         uses: actions/cache@v3
          id: cache
          with:
            path: /tmp/cache
@@ -51,7 +51,7 @@ jobs:
     needs: build
     steps:
        - name: Cache
-         uses: actions/cache@v2
+         uses: actions/cache@v3
          id: cache
          with:
            path: /tmp/cache
