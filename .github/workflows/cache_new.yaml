@@ -6,7 +6,7 @@ name: Cache Demo
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   pull_request:
-    branches: [main]
+    branches: [master]
     types: [closed]
 
   repository_dispatch:
